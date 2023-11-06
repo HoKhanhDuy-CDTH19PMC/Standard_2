@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+hr.employee,access.hr.employee,model_hr_employee,base.group_user,1,1,1,1
+res.partner,access.res.partner,model_res_partner,base.group_user,1,1,1,1
+standard.line,access_standard.line,model_standard_line,base.group_user,1,1,1,1
+standard.mold,access_standard.mold,model_standard_mold,base.group_user,1,1,1,1
+standard.common,access_standard.common,model_standard_common,base.group_user,1,1,1,1
+standard.common.detail,access_standard.common.detail,model_standard_common_detail,base.group_user,1,1,1,1
+product.product,access.product.product,model_product_product,base.group_user,1,1,1,1
+stock.location,access.stock.location,model_stock_location,base.group_user,1,1,1,1
+standard.blade,access_standard.blade,model_standard_blade,base.group_user,1,1,1,1
+mrp.bom,access.mrp.bom,model_mrp_bom,base.group_user,1,1,1,1
+
+
+
+

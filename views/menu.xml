@@ -1,0 +1,6 @@
+<odoo>
+    <data>
+                <menuitem name="Standard" id="cdl_standard_menu"/>
+                <menuitem name="Information" id="cdl_information_menu" parent="cdl_standard_menu"/>
+    </data>
+</odoo>

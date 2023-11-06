@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='mold_action' model='ir.actions.act_window'>
+        <field name="name">Mold</field>
+        <field name="res_model">standard.mold</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Mold" id="mold_action_main_menu" parent="cdl_information_menu" action="mold_action"/>
+
+    <!-- Tree(list) View -->
+    <record id="mold_view_tree" model="ir.ui.view">
+        <field name="name">Mold List</field>
+        <field name="model">standard.mold</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="mold_serial" string="Mold Serial"/>
+                <field name="name" string="Mold Name"/>
+                <field name="product" string="Product"/>
+                <field name="line_type" string="Line Type"/>
+                <field name="check_form" string="Check Form"/>
+                <field name="mold_type" string="Mold Type"/>
+                <field name="production_date" string="Production Date"/>
+                <field name="supplier" string="Supplier"/>
+                <field name="mold_status" string="Mold Status"/>
+                <field name="max_number" string="Max Number"/>
+                <field name="current_number" string="Current Number"/>
+                <field name="period_number" string="Period Number"/>
+                <field name="remark" string="Remark"/>
+                <field name="create_uid"/>
+                <field name="create_date"/>
+                <field name="write_uid"/>
+                <field name="write_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="mold_view_form" model="ir.ui.view">
+        <field name="name">Mold Form</field>
+        <field name="model">standard.mold</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <group>
+                                <field name="mold_serial" string="Mold Serial"/>
+                            </group>
+                            <group>
+                                <field name="product" string="Product Name" widget="many2many_tags"/>
+                            </group>
+                            <group>
+                                <field name="line_type" string="Line Type" widget="many2many_tags"/>
+                            </group>
+                            <group>
+                                <field name="mold_type" string="Mold Type"/>
+                            </group>
+                            <group>
+                                <field name="supplier" string="Supplier"/>
+                            </group>
+                            <group>
+                                <field name="max_number" string="Max Number"/>
+                            </group>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <group>
+                                <field name="name" string="Mold Name"/>
+                            </group>
+                            <!-- <group>
+                                <field name="model" string="Model"/>
+                            </group> -->
+                            <group>
+                                <field name="check_form" string="Check Form"/>
+                            </group>
+                            <group>
+                                <field name="production_date" string="Production Date"/>
+                            </group>
+                            <group>
+                                <field name="mold_status" string="Mold Status"/>
+                            </group>
+                            <group>
+                                <field name="current_number" string="Current Number"/>
+                            </group>
+                            <group>
+                                <field name="period_number" string="Period Number"/>
+                            </group>
+                        </div>
+                        <div class="col-md-12">
+                            <group>
+                                <field name="remark" string="Remark"/>
+                            </group>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

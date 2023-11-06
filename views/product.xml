@@ -1,0 +1,32 @@
+<odoo>
+    <record model="ir.ui.view" id="product_product_tree_inherit">
+        <field name="name">product.product.tree.inherit</field>
+        <field name="model">product.product</field>
+        <field name="type">tree</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="default_code" position="attributes">
+                <attribute name="string">Product Code</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="product_product_form_inherit">
+        <field name="name">product.product.form.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+            <field name="default_code" position="attributes">
+                <attribute name="string">Product Code</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_action" model="ir.actions.act_window">
+        <field name="name">Product</field>
+        <field name="res_model">product.product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Product" id="product_action_main_menu" parent="cdl_information_menu" action="product_action" />
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='common_action' model='ir.actions.act_window'>
+        <field name="name">Common</field>
+        <field name="res_model">standard.common</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Common" id="common_action_main_menu" parent="cdl_information_menu" action="common_action"/>
+
+    <!-- Tree(list) View -->
+    <record id="cdl_common_view_tree" model="ir.ui.view">
+        <field name="name">Common List</field>
+        <field name="model">standard.common</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code" string="Common Code"/>
+                <field name="name" string="Common Name"/>
+                <field name="create_uid"/>
+                <field name="create_date"/>
+                <field name="write_uid"/>
+                <field name="write_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="cdl_common_view_form" model="ir.ui.view">
+        <field name="name">Common Form</field>
+        <field name="model">standard.common</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                     <group>
+                        <field name="code" string="Common Code"/>
+                    </group>
+                    <group>
+                        <field name="name" string="Common Name"/>
+                    </group>
+                    <notebook>
+                    <page string='Detail'>
+                        <field name="detail">
+                        <tree>
+                             <field name="code" string="Common Detail Code"/>
+                            <field name="name" string="Common Detail Name"/>
+                        </tree>
+                        </field>
+                    
+                    </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

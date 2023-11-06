@@ -1,0 +1,28 @@
+<odoo>
+    <record model="ir.ui.view" id="stock_location_tree_inherit">
+        <field name="name">mrp.bom.tree.inherit</field>
+        <field name="model">mrp.bom</field>
+        <field name="type">tree</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="active" invisible="1"/>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="stock_location_form_inherit">
+        <field name="name">mrp.bom.form.inherit</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
+        <field name="arch" type="xml">
+           <field name="active" invisible="1"/>
+        </field>
+    </record>
+
+    <record id="bom_action" model="ir.actions.act_window">
+        <field name="name">BOM</field>
+        <field name="res_model">mrp.bom</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="BOM" id="bom_action_main_menu" parent="cdl_information_menu" action="bom_action" />
+</odoo>

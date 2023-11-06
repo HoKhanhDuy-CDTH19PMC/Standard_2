@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='blade_action' model='ir.actions.act_window'>
+        <field name="name">Blade</field>
+        <field name="res_model">standard.blade</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Blade" id="blade_action_main_menu" parent="cdl_information_menu" action="blade_action"/>
+
+    <!-- Tree(list) View -->
+    <record id="blade_view_tree" model="ir.ui.view">
+        <field name="name">Blade List</field>
+        <field name="model">standard.blade</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="blade_serial" string="Blade Serial"/>
+                <field name="name" string="Blade Name"/>
+                <field name="supplier" string="Supplier"/>
+                <field name="check_form" string="Check Form"/>
+                <field name="import_date" string="Import Date"/>
+                <field name="export_date" string="Export Date"/>
+                <field name="line" string="Line"/> 
+                <field name="blade_status" string="Blade Status"/>
+                <field name="expire_number" string="Expire Number"/>
+                <field name="current_number" string="Current Number"/>
+                <field name="periodic_check" string="Periodic Check"/>
+                <field name="description" string="Description"/>
+                <field name="create_uid"/>
+                <field name="create_date"/>
+                <field name="write_uid"/>
+                <field name="write_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="blade_view_form" model="ir.ui.view">
+        <field name="name">Blade Form</field>
+        <field name="model">standard.blade</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <group>
+                                <field name="blade_serial" string="Blade Serial"/>
+                            </group>
+                            <group>
+                                <field name="supplier" string="Supplier"/>
+                            </group>
+                            <group>
+                                <field name="import_date" string="Import Date" />
+                            </group>
+                            <group>
+                                <field name="line" string="Line"/>
+                            </group>
+                            <group> 
+                                <field name="expire_number" string="Expire Number"/>
+                            </group>
+                            <group>
+                                <field name="periodic_check" string="Periodic Check"/>
+                            </group>
+                        </div>
+                        <div class="col-md-6">
+                            <group>
+                                <field name="name" string="Blade Name"/>
+                            </group>
+                            <group>
+                                <field name="check_form" string="Check Form"/>
+                            </group>
+                            <group>
+                                <field name="export_date" string="Export Date"/>
+                            </group>
+                            <group>
+                                <field name="blade_status" string="Blade Status"/>
+                            </group>
+                            <group>
+                                <field name="current_number" string="Current Number"/>
+                            </group>
+                        </div>
+                        <div class="col-md-12">
+                            <group>
+                                <field name="description" string="Description"/>
+                            </group>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
